@@ -8,7 +8,7 @@ class LoginPage < SitePrism::Page
   section  :header, Headers::Header, '#header'
   section  :login_form, Authentication::LoginForm, '#login_form'
   section  :create_account_option, Authentication::CreateAccountOption, '#create-account_form'
-  
+
   element  :alert_danger, '.alert-danger', visible: :visible
 
   def login_with(email, password)

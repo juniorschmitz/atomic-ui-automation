@@ -3,6 +3,8 @@ AllCops:
   Exclude: 
   - 'features/support/factory/static/*'
   - 'features/support/utils/schemas/*'
+  - 'features/support/state_controller/*'
+  - 'features/support/env.rb'
 Naming/AccessorMethodName:
   Enabled: false
 Style/Documentation:
@@ -10,4 +12,6 @@ Style/Documentation:
 Naming/AsciiIdentifiers:
   Enabled: false
 Style/GlobalVars:
+  Enabled: false
+Layout/LineLength:
   Enabled: false

@@ -1,0 +1,15 @@
+url_login: 'http://automationpractice.com/index.php?controller=authentication'
+url_add_product: 'http://automationpractice.com/index.php?rand='
+headers:
+  header_login:
+    - key: 'Accept'
+      value: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    - key: 'Content-Type'
+      value: 'application/x-www-form-urlencoded'
+  header_add_product:
+    - key: 'Accept'
+      value: 'application/json, text/javascript, */*; q=0.01'
+    - key: 'Content-Type'
+      value: 'application/x-www-form-urlencoded; charset=UTF-8'
+    - key: 'X-Requested-With'
+      value: 'XMLHttpRequest'
