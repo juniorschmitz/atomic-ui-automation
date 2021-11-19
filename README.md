@@ -37,4 +37,8 @@ Without the StateController modification, the project was already optimized, but
 
 With the StateController modification, the project now runs the same scenarios but in *3~4 minutes*.
 
+Atomic tests *must* be parallelized, the maximum duration of test duration can be the maximum duration of the slowest scenario if parallelization is applied as it has to be with good practices.
+
+This project need a single upgrade for parallelizing scenarios without making race conditions between user sessions, it must be the last update for a great example on atomic ui scenarios, and is going to be implemented in the near future.
+
 Any doubts, feel free to contact me.
