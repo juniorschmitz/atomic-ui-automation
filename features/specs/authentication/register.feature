@@ -5,6 +5,7 @@ Feature: Registration on the Fake Ecommerce
   As a common user
   So I can navigate and buy stuff
 
+@register_new_user
 Scenario: Registration successfuly
   Given access the login page
   When select the registration option

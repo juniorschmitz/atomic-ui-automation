@@ -3,6 +3,8 @@
 Dir[File.join(File.dirname(__FILE__), '../../sections/*/*.rb')].sort.each { |file| require file }
 
 class CartPage < SitePrism::Page
+  set_url '?controller=order'
+
   sections :products, Products::CartProduct, 'tr.cart_item'
   
   element  :total_value, '#total_product'

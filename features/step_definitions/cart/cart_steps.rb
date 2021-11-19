@@ -1,5 +1,36 @@
 # frozen_string_literal: true
 
+Given('is logged in and with a product on the shopping cart') do
+  @home_page = HomePage.new
+  @home_page.load
+  user = Factory::Static.static_data('valid_login')
+  StateController::StateSetter.set_logged_user(user['email'], user['password'])
+  products = [{ id: '5', ipa: '19' }]
+  StateController::StateSetter.set_cart_status(products)
+end
+
+Given('is logged in') do
+  @home_page = HomePage.new
+  @home_page.load
+  user = Factory::Static.static_data('valid_login')
+  StateController::StateSetter.set_logged_user(user['email'], user['password'])
+end
+
+Given('has a product on the shopping cart') do
+  products = [{ id: '5', ipa: '19' }]
+  StateController::StateSetter.set_cart_status(products)
+end
+
+Given('has two products on the shopping cart') do
+  products = [{ id: '5', ipa: '19' }, { id: '1', ipa: '1' }]
+  StateController::StateSetter.set_cart_status(products)
+end
+
+When('is on the shopping cart') do
+  @cart_page = CartPage.new
+  @cart_page.load
+end
+
 When('exclude the product from the shopping cart') do
   @cart_page = CartPage.new
   @cart_page.exclude_product
@@ -33,7 +64,7 @@ When('continue shopping') do
 end
 
 Then('should go back to the search page') do
-  expect(@search_page.current_url).to include 'controller=search'
+  expect(@cart_page.current_url).not_to include 'controller=order'
 end
 
 When('proceed with the checkout') do

@@ -9,6 +9,8 @@ require 'pry'
 require 'cucumber'
 require 'rspec'
 require 'faker'
+require 'net/http'
+require 'uri'
 
 ENVIRONMENT = ENV['ENVIRONMENT']
 ENVIRONMENT_CONFIG = YAML.load_file(File.dirname(__FILE__) +"/environment/#{ENVIRONMENT}.yml")
