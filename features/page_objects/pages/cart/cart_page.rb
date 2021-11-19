@@ -6,7 +6,7 @@ class CartPage < SitePrism::Page
   set_url '?controller=order'
 
   sections :products, Products::CartProduct, 'tr.cart_item'
-  
+
   element  :total_value, '#total_product'
   element  :p_message_empty_cart, '.alert-warning'
   element  :btn_continue_shopping, 'a[title="Continue shopping"]'
