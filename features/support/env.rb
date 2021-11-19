@@ -16,6 +16,7 @@ ENVIRONMENT = ENV['ENVIRONMENT']
 ENVIRONMENT_CONFIG = YAML.load_file(File.dirname(__FILE__) + "/environment/#{ENVIRONMENT}.yml")
 URL = ENVIRONMENT_CONFIG['url']
 BROWSER = ENV['BROWSER'].to_sym
+PARALLEL ||= ENV['PARALLEL']
 
 Capybara.register_driver :selenium do |app|
   case BROWSER

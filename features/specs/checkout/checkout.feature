@@ -6,7 +6,7 @@ Feature: Checkout flows on the Fake Ecommerce
   So the Ecommerce users could buy clothes
 
 Background: Starts logged in
-  Given is logged in
+  Given is logged in with the user "valid_checkout_login"
 
 @checkout_with_check
 Scenario: Common Checkout Flow using Check as Payment
