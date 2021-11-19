@@ -1,6 +1,19 @@
 valid_login:
-  email: potato@testezap.com
-  password: 123456&
+  email: "potato@testezap.com"
+  password: "123456&"
+  token: "b765e7cd25d56e05326eb88f4b74a9e5"
+valid_cart_login:
+  email: "potato2@testezap.com"
+  password: "123456&"
+  token: "17391a8eb4716d5c93e40c754845128b"
+valid_product_login:
+  email: "potato3@testezap.com"
+  password: "123456&"
+  token: "fb84e809ffa98f830e7414737d0a74d1"
+valid_checkout_login:
+  email: "potato4@testezap.com"
+  password: "123456&"
+  token: "5490649e557089388573d7c879df5729"
 invalid_login:
   email: potato2@testezap.com
   password: 123

@@ -6,7 +6,7 @@ Feature: Mini Cart features
   So I can navigate and buy stuff
 
 Background: Starts logged in on the Home Page with a product added to the cart
-  Given is logged in and with a product on the shopping cart
+  Given is logged in with the user "valid_login" and with a product on the shopping cart
 
 @exclude_product_mini_cart
 Scenario: Exclude a product from the mini cart

@@ -6,7 +6,7 @@ Feature: Cart features
   So I can navigate and buy stuff
 
 Background: Starts on the cart logged in and with a product
-  Given is logged in and with a product on the shopping cart
+  Given is logged in with the user "valid_cart_login" and with a product on the shopping cart
   And is on the shopping cart
 
 @exclude_product_from_cart

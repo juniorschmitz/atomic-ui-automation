@@ -7,7 +7,7 @@ Feature: Features on the Product Page
   So the users would be able to select and change attributes of the products they desire to buy
 
 Background: Starts logged in
-  Given is logged in
+  Given is logged in with the user "valid_product_login"
 
 @pdp_attributes_selection_logged_in
 Scenario: Attributes selection

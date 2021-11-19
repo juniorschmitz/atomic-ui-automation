@@ -18,7 +18,7 @@ module StateController
       Capybara.page.refresh
     end
 
-    def self.set_cart_status(products)
+    def self.set_cart_status(products, token)
       login_cookie = get_logged_in_cookie
       products.each do |product|
         url_add_product = get_url('url_add_product') + Time.now.to_i.to_s
@@ -32,7 +32,7 @@ module StateController
           'ajax' => 'true',
           'qty' => '1',
           'id_product' => product[:id],
-          'token' => 'b765e7cd25d56e05326eb88f4b74a9e5',
+          'token' => token,
           'ipa' => product[:ipa]
         )
         Net::HTTP.start(uri.host, uri.port).request(request)

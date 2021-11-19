@@ -4,6 +4,8 @@ This project was created for showing patterns that can help in reducing test aut
 
 In the StateController, we can login and set the login cookies in the application without having to go through the UI, and also, we can add products in the shopping cart without having to do all steps through the application UI. We do these actions by replacing UI actions for directly calling the application form submissions using the desired information.
 
+### Project stacks and patterns
+
 The project uses the following stack:
 - Ruby language;
 - Capybara gem;
@@ -16,12 +18,16 @@ The project uses the following patterns:
 - Data Factory pattern for dealing with test data;
 - State controller pattern for dealing with the application states;
 
+### How to execute the project
+
+The project uses bundler as the default Ruby package manager, and Cucumber as the tests executor.
+
 For installing the project needed gems, one should:
 ```
 bundle install
 ```
 
-For running all tests, one should:
+For running all tests sequentially, one should:
 ```
 bundle exec cucumber -p default -t@full_regression
 ```
@@ -33,12 +39,23 @@ For running the project in headless mode, one could add the "-p headless" flag i
 bundle exec cucumber -t@search_existent_product -p headless
 ```
 
-Without the StateController modification, the project was already optimized, but it used to took *5~6 minutes* for running all 25 scenarios.
+If ou would like to run all scenarios using parallelization, you can run:
+```
+bundle exec parallel_cucumber -n <threads_number> -o '-p default_parallel -p headless -t@full_regression'
+```
 
-With the StateController modification, the project now runs the same scenarios but in *3~4 minutes*.
+Since the parallelization is made under feature file levels, it was testes using 3 and 4 threads, but you can increase more as needed.
 
-Atomic tests *must* be parallelized, the maximum duration of test duration can be the maximum duration of the slowest scenario if parallelization is applied as it has to be with good practices.
+### Differences after atomic ui project modifications
 
-This project need a single upgrade for parallelizing scenarios without making race conditions between user sessions, it must be the last update for a great example on atomic ui scenarios, and is going to be implemented in the near future.
+Without the StateController modification, the project was already optimized, but it used to took __5~6 minutes__ for running all 25 scenarios.
+
+With the StateController modification, the project now runs the same scenarios but in __3~4 minutes__,
+
+### About parallelization
+
+Atomic tests __must__ be parallelized, the maximum duration of test duration can be the maximum duration of the slowest scenario if parallelization is applied as it has to be with good practices.
+
+After adding parallelization to the project, it was possible to run all 25 scenarios under __1 minute__.
 
 Any doubts, feel free to contact me.

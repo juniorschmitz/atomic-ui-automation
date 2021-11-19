@@ -1,29 +1,29 @@
 # frozen_string_literal: true
 
-Given('is logged in and with a product on the shopping cart') do
+Given('is logged in with the user {string} and with a product on the shopping cart') do |user|
   @home_page = HomePage.new
   @home_page.load
-  user = Factory::Static.static_data('valid_login')
-  StateController::StateSetter.set_logged_user(user['email'], user['password'])
+  @user = Factory::Static.static_data(user)
+  StateController::StateSetter.set_logged_user(@user['email'], @user['password'])
   products = [{ id: '5', ipa: '19' }]
-  StateController::StateSetter.set_cart_status(products)
+  StateController::StateSetter.set_cart_status(products, @user['token'])
 end
 
-Given('is logged in') do
+Given('is logged in with the user {string}') do |user|
   @home_page = HomePage.new
   @home_page.load
-  user = Factory::Static.static_data('valid_login')
-  StateController::StateSetter.set_logged_user(user['email'], user['password'])
+  @user = Factory::Static.static_data(user)
+  StateController::StateSetter.set_logged_user(@user['email'], @user['password'])
 end
 
 Given('has a product on the shopping cart') do
   products = [{ id: '5', ipa: '19' }]
-  StateController::StateSetter.set_cart_status(products)
+  StateController::StateSetter.set_cart_status(products, @user['token'])
 end
 
 Given('has two products on the shopping cart') do
   products = [{ id: '5', ipa: '19' }, { id: '1', ipa: '1' }]
-  StateController::StateSetter.set_cart_status(products)
+  StateController::StateSetter.set_cart_status(products, @user['token'])
 end
 
 When('is on the shopping cart') do
