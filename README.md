@@ -8,7 +8,7 @@ In the StateController, we can login and set the login cookies in the applicatio
 
 The System Under Test (SUT) used for creating this example on atomic ui testing strategy was the Selenium Automation Practice website, which can be found at: [Automation Practice](http://automationpractice.com/index.php)
 
-The project without atomic modifications, which used end to end strategy for all scenarios can be found at: [E2E Starter Project](https://github.com/juniorschmitz/capybara-siteprism-automation)
+The project without atomic modifications, which used end to end strategy for all scenarios can be found at: [E2E Starter Project](https://github.com/juniorschmitz/e2e-web-test-automation)
 
 ### Project stacks and patterns
 
