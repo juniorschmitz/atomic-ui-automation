@@ -1,12 +1,14 @@
 # Atomic UI Automation
 
+[![Linter CI](https://github.com/juniorschmitz/atomic-ui-automation/actions/workflows/main.yml/badge.svg)](https://github.com/juniorschmitz/atomic-ui-automation/actions/workflows/main.yml)
+
 This project was created for showing patterns that can help in reducing test automation flakiness and time for execution. The main pattern that helps in creating atomic UI scenarios is the application StateController.
 
 In the StateController, we can login and set the login cookies in the application without having to go through the UI, and also, we can add products in the shopping cart without having to do all steps through the application UI. We do these actions by replacing UI actions for directly calling the application form submissions using the desired information.
 
 The System Under Test (SUT) used for creating this example on atomic ui testing strategy was the Selenium Automation Practice website, which can be found at: [Automation Practice](http://automationpractice.com/index.php)
 
-The project without atomic modifications, which used end to end strategy for all scenarios can be found at: [E2E Automation project non atomic](https://github.com/juniorschmitz/capybara-siteprism-automation)
+The project without atomic modifications, which used end to end strategy for all scenarios can be found at: [E2E Starter Project](https://github.com/juniorschmitz/capybara-siteprism-automation)
 
 ### Project stacks and patterns
 
